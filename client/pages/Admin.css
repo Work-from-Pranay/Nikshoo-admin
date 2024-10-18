@@ -1,0 +1,215 @@
+/* General styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f9f9;
+    display: flex;
+  }
+
+  .wrap{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    
+  }
+  
+  /* Sidebar Navigation - Fixed on the left without padding/margin */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 15%;
+    /* opacity: 0; */
+    background-color: #23AA9B;
+    padding: 20px 0; /* No padding on the left */
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 60px; /* Space from the top */
+  }
+  
+  nav ul li {
+    margin-bottom: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #09655b; /* Darker shade of #23AA9B */
+    color: #f0f9f9;
+  }
+  
+  /* Main layout - Flex container for sidebar and content */
+  .container {
+    display: flex;
+    margin-left: 220px; 
+    padding: 20px;
+    width: 84%;
+    background-color: #a8d1cd;
+    min-height:95vh;
+  }
+  a{
+    text-decoration: none;
+    color: #23AA9B;
+  }
+  /* Content Area - AdminUser.jsx */
+  .content {
+    background-color: #2dbaa9;
+    flex-grow: 1;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    
+  }
+  .logout{
+    background: rgb(250, 0, 0);
+    border: none;
+    border-radius: 10px;
+    margin-left: 0.5vw;
+  }
+  
+  
+
+  /* Table styling */
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* margin-top: 20px; */
+}
+
+thead {
+  background-color: #23AA9B; /* Same as the sidebar */
+  color: white;
+  position: sticky;
+  top: 0;
+  
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f4f9f9; /* Alternating row background */
+}
+
+tbody tr:hover {
+  background-color: #e8f7f7; /* Hover effect for table rows */
+}
+
+/* Scrollable table body */
+.table-container {
+  height: 60vh; /* Fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  /* background: #000; */
+}
+h1{
+  color: #ffffff;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #23AA9B;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #1c877d; /* Darker shade for hover */
+}
+
+
+/* 
+login page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: #23AA9B;
+}
+
+.login-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Fixed width for the form */
+  text-align: center; /* Centered text */
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  color: #23AA9B; /* Title color */
+}
+
+.search{
+  width: 40vw !important;
+  margin-right: 3vw;
+  display: block;
+
+}
+
+.login-form input {
+  width: 90%; /* Full width inputs */
+  padding: 10px;
+  margin-bottom: 15px; /* Space between inputs */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.login-form input:focus {
+  border-color: #23AA9B; /* Highlight border color on focus */
+}
+
+.login-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #23AA9B; /* Button color */
+  color: white;
+  cursor: pointer;
+  width: 100%; /* Full width button */
+}
+
+.login-form button:hover {
+  background-color: #1c877d; /* Darker shade for hover */
+  
+}
+.logout:hover{
+  background: rgb(202, 8, 8) !important;
+ 
+}
+
+.active{
+  background: #09655b;
+}
