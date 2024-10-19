@@ -115,52 +115,56 @@ const AdminUser = () => {
       {/* Show pop-up when the state is true */}
       {showPopup && <AdminPopUp onClose={handleClosePopup} />} {/* Pass the close function */}
 
-      <table border="1">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Email</th>
-            <th>Admin</th>
-            <th>Change Role</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredUsers.length > 0 ? (
-            filteredUsers.map((user) => (
-              <tr key={user.uid}>
-                <td>{user.uid}</td>
-                <td>{user.email}</td>
-                <td>{user.isAdmin ? "True" : "False"}</td>
-                <td>
-                  {/* Directly render the select dropdown for role change */}
-                  <select
-                    value={user.isAdmin ? "admin" : "user"}
-                    onChange={(e) => {
-                      const role = e.target.value;
-                      setSelectedRole(role);
-                      handleChangeRole(user.uid, role); // Call function to change role
-                    }}
-                    style={{
-                      padding: '5px',
-                      borderRadius: '5px',
-                      border: '1px solid #ddd',
-                      backgroundColor: '#23AA9B',
-                      color: 'white',
-                    }}
-                  >
-                    <option value="user">User</option>
-                    <option value="admin">Admin</option>
-                  </select>
-                </td>
-              </tr>
-            ))
-          ) : (
+      <div className="table-container">
+        <table border="1">
+          <thead>
             <tr>
-              <td colSpan="4">No users found</td>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Admin</th>
+              <th>Change Role</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredUsers.length > 0 ? (
+              filteredUsers.map((user) => (
+                <tr key={user.uid}>
+                  <td>{user.uid}</td>
+                  <td>{user.email}</td>
+                  <td>{user.isAdmin ? "True" : "False"}</td>
+                  <td>
+                    {/* Directly render the select dropdown for role change */}
+                    <select
+                      value={user.isAdmin ? "admin" : "user"}
+                      onChange={(e) => {
+                        const role = e.target.value;
+                        setSelectedRole(role);
+                        handleChangeRole(user.uid, role); // Call function to change role
+                      }}
+                      style={{
+                        padding: '5px',
+                        borderRadius: '5px',
+                        border: '1px solid #ddd',
+                        backgroundColor: '#23AA9B',
+                        color: 'white',
+                      }}
+                    >
+                      <option value="user">User</option>
+                      <option value="admin">Admin</option>
+                    </select>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="4">No users found</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+
+      </div>
+
     </div>
   );
 };

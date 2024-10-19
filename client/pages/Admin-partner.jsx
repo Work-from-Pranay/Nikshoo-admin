@@ -101,7 +101,7 @@ const AdminPartner = () => {
     return (
         <div className="container-partner">
             <div className="partners">
-                <h1 className='h1-con'>Partner Page Partners</h1>
+                <h1 className='h1-con'>Partners</h1>
 
                 {/* Search Bar */}
                 <input
@@ -126,7 +126,7 @@ const AdminPartner = () => {
                         padding: '10px',
                         marginBottom: '20px',
                         borderRadius: '5px',
-                        backgroundColor: '#23AA9B',
+                        backgroundColor: '#09655b',
                         color: 'white',
                         border: 'none',
                         cursor: 'pointer'

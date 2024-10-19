@@ -97,7 +97,7 @@ const AdminContactTwo = () => {
   return (
     <div className="container-contact">
       <div className="contacts">
-        <h1 className='h1-con'>Contact Page Contacts</h1>
+        <h1 className='h1-con'>Contact Page</h1>
 
         {/* Search Bar */}
         <input 
@@ -122,7 +122,7 @@ const AdminContactTwo = () => {
             padding: '10px',
             marginBottom: '20px',
             borderRadius: '5px',
-            backgroundColor: '#23AA9B',
+            backgroundColor: '#09655b',
             color: 'white',
             border: 'none',
             cursor: 'pointer'

@@ -1,87 +1,120 @@
-/* General styling */
+/* General Styling */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f9f9;
-    display: flex;
-  }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f9f9;
+  display: flex;
+}
 
-  .wrap{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    
-  }
-  
-  /* Sidebar Navigation - Fixed on the left without padding/margin */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 15%;
-    /* opacity: 0; */
-    background-color: #23AA9B;
-    padding: 20px 0; /* No padding on the left */
-  }
-  
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 60px; /* Space from the top */
-  }
-  
-  nav ul li {
-    margin-bottom: 20px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    padding: 10px 15px;
-    border-radius: 5px;
-  }
-  
-  nav ul li a:hover {
-    background-color: #09655b; /* Darker shade of #23AA9B */
-    color: #f0f9f9;
-  }
-  
-  /* Main layout - Flex container for sidebar and content */
-  .container {
-    display: flex;
-    margin-left: 220px; 
-    padding: 20px;
-    width: 84%;
-    background-color: #a8d1cd;
-    min-height:95vh;
-  }
-  a{
-    text-decoration: none;
-    color: #23AA9B;
-  }
-  /* Content Area - AdminUser.jsx */
-  .content {
-    background-color: #2dbaa9;
-    flex-grow: 1;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    width: 80%;
-    
-  }
-  .logout{
-    background: rgb(250, 0, 0);
-    border: none;
-    border-radius: 10px;
-    margin-left: 0.5vw;
-  }
-  
-  
+.wrap {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.search{
+  display: block;
+  width: 20vw !important;
+}
 
-  /* Table styling */
+.hamburger {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's on top */
+}
+.hamburger:hover{
+  background: transparent !important;
+}
+h1{
+  color: white;
+}
+
+/* Sidebar Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 15%;
+  background-color: #23AA9B;
+  padding: 20px 0;
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+nav.open {
+  transform: translateX(0); /* Show the sidebar when open */
+}
+a{
+  text-decoration: none;
+  color: #23AA9B;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 60px;
+}
+
+nav ul li {
+  margin-bottom: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #09655a7d;
+  color: #f0f9f9;
+}
+
+.logout {
+  background: rgb(250, 0, 0);
+  border: none;
+  border-radius: 10px;
+  margin-left: 0.5vw;
+}
+
+.logout:hover {
+  background: rgb(202, 8, 8) !important;
+}
+
+/* Main layout - Flex container for sidebar and content */
+.container {
+  display: flex;
+  margin-left: 220px;
+  padding: 20px;
+  width: 84%;
+  background-color: #a8d1cd;
+  min-height: 95vh;
+}
+
+a {
+  text-decoration: none;
+  color: #23AA9B;
+}
+
+.content {
+  background-color: #2dbaa9;
+  flex-grow: 1;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 80%;
+}
+
 /* Table styling */
 table {
   width: 100%;
@@ -89,15 +122,13 @@ table {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* margin-top: 20px; */
 }
 
 thead {
-  background-color: #23AA9B; /* Same as the sidebar */
+  background-color: #23AA9B;
   color: white;
   position: sticky;
   top: 0;
-  
 }
 
 th, td {
@@ -111,23 +142,20 @@ th {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f4f9f9; /* Alternating row background */
+  background-color: #f4f9f9;
 }
 
 tbody tr:hover {
-  background-color: #e8f7f7; /* Hover effect for table rows */
+  background-color: #e8f7f7;
 }
 
 /* Scrollable table body */
 .table-container {
-  height: 60vh; /* Fixed height */
-  overflow-y: auto; /* Enable vertical scrolling */
-  /* background: #000; */
-}
-h1{
-  color: #ffffff;
+  height: 60vh;
+  overflow-y: auto;
 }
 
+/* Button styling */
 button {
   padding: 8px 12px;
   border: none;
@@ -143,12 +171,10 @@ button:disabled {
 }
 
 button:hover:not(:disabled) {
-  background-color: #1c877d; /* Darker shade for hover */
+  background-color: #1c877d;
 }
 
-
-/* 
-login page */
+/* Login page */
 .login-container {
   display: flex;
   justify-content: center;
@@ -163,53 +189,77 @@ login page */
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px; /* Fixed width for the form */
-  text-align: center; /* Centered text */
+  width: 300px;
+  text-align: center;
 }
 
 .login-form h2 {
   margin-bottom: 20px;
-  color: #23AA9B; /* Title color */
-}
-
-.search{
-  width: 40vw !important;
-  margin-right: 3vw;
-  display: block;
-
+  color: #23AA9B;
 }
 
 .login-form input {
-  width: 90%; /* Full width inputs */
+  width: 90%;
   padding: 10px;
-  margin-bottom: 15px; /* Space between inputs */
+  margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
 .login-form input:focus {
-  border-color: #23AA9B; /* Highlight border color on focus */
+  border-color: #10665c;
+  outline: none;
 }
 
 .login-form button {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #23AA9B; /* Button color */
+  background-color: #23AA9B;
   color: white;
   cursor: pointer;
-  width: 100%; /* Full width button */
+  width: 100%;
 }
 
 .login-form button:hover {
-  background-color: #1c877d; /* Darker shade for hover */
-  
-}
-.logout:hover{
-  background: rgb(202, 8, 8) !important;
- 
+  background-color: #1c877d;
 }
 
-.active{
-  background: #09655b;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger {
+      display: block;
+      z-index: 1001;
+  }
+  
+  .table-container{
+    width: 92%;
+    
+  }
+  
+
+  nav {
+      transform: translateX(-100%);
+      width: 60%;
+      z-index: 100;
+  }
+
+  nav.open {
+      transform: translateX(0);
+  }
+  .search{
+    display: block;
+    width: 85vw !important;
+  }
+  
+ 
+  .container {
+      margin-left: 0;
+      width: 100%;
+      padding: 0px;
+  }
+
+  .content {
+      width: 100%;
+  }
 }
