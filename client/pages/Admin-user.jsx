@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AdminPopUp from "../Components/AdminPopUp.jsx"; // Import the popup component
-
+import { GrUserAdmin } from "react-icons/gr";
 const AdminUser = () => {
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState(''); // State for search term

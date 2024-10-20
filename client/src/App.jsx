@@ -9,6 +9,7 @@ import './App.css'
 import ProtectedRoute from '../pages/Protected'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import AdminPartner from '../pages/Admin-partner'
+import AdminImage from '../pages/Admin-image'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='contact' element={<AdminContact />}></Route>
           <Route path='contact2' element={<AdminContactTwo />}></Route>
           <Route path='partner' element={<AdminPartner />}></Route>
+          <Route path='images' element={<AdminImage />}></Route>
 
         </Route>
       </Routes>
