@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './Admin.css'; // Importing the CSS file
+import { FaSpinner } from 'react-icons/fa';
+
 
 const AdminImage = () => {
     const [images, setImages] = useState([]); // State for images to display
@@ -184,12 +186,12 @@ const AdminImage = () => {
                                 <img src={image.imageUrl} alt={`Uploaded ${index}`} style={{ width: '100%', borderRadius: '5px' }} />
                                 <div className="overlay">
                                     <span className="image-name">{image.fileName}</span>
-                                    <button 
+                                    <button
                                         onClick={() => {
-                                            setEditingFileName(image.fileName); 
+                                            setEditingFileName(image.fileName);
                                             setNewFileName(''); // Reset input on edit
                                         }}
-                                        
+                                        className="edit"
                                     >
                                         Edit Name
                                     </button>
@@ -200,7 +202,9 @@ const AdminImage = () => {
                             </div>
                         ))
                     ) : (
-                        <p>No images found</p>
+                        <div className="loading-container">
+                            <FaSpinner className="loading-icon imgone" />
+                        </div>
                     )}
                 </div>
             </div>

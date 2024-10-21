@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaSpinner } from 'react-icons/fa';
 
 const AdminContact = () => {
   const [enquiries, setEnquiries] = useState([]);
@@ -15,10 +16,10 @@ const AdminContact = () => {
           id,
           ...enquiry
         }));
-        
+
         // Log each enquiry ID
         // enquiriesArray.forEach(enquiry => console.log(enquiry.id));
-        
+
         setEnquiries(enquiriesArray);
         setFilteredEnquiries(enquiriesArray);
       } catch (error) {
@@ -27,7 +28,7 @@ const AdminContact = () => {
         setLoading(false);
       }
     };
-    
+
 
     fetchEnquiries();
   }, []);
@@ -77,8 +78,8 @@ const AdminContact = () => {
   };
 
   const handleDelete = async (id) => {
-    
-    
+
+
     if (window.confirm('Are you sure you want to delete this enquiry?')) {
       try {
         const response = await fetch(`https://nikshoo-backend.vercel.app/admin/enquiry/${id}?uid=EyrEUxvYnVZueLMjvX3LOX7RHVb2`, {
@@ -97,7 +98,7 @@ const AdminContact = () => {
       }
     }
   };
- 
+
 
   return (
     <div className="container-contact">
@@ -152,11 +153,15 @@ const AdminContact = () => {
             <tbody>
               {loading ? (
                 <tr key="loading">
-                  <td colSpan="9">Loading...</td>
+                  <td colSpan="9">
+                    <div className="loading-container">
+                      <FaSpinner className="loading-icon" />
+                    </div>
+                  </td>
                 </tr>
               ) : filteredEnquiries.length > 0 ? (
                 filteredEnquiries.map((enquiry) => (
-                  <tr key={enquiry.createdAt}> 
+                  <tr key={enquiry.createdAt}>
                     <td>{enquiry.name}</td>
                     <td>{enquiry.email}</td>
                     <td>{enquiry.contactNo}</td>
@@ -167,13 +172,13 @@ const AdminContact = () => {
                     <td>{new Date(enquiry.createdAt).toLocaleDateString()}</td>
                     <td>
                       <button style={{
-                          padding: '5px 10px',
-                          borderRadius: '5px',
-                          backgroundColor: 'red',
-                          color: 'white',
-                          border: 'none',
-                          cursor: 'pointer'
-                        }}onClick={() => handleDelete(enquiry.id)}>Delete</button>
+                        padding: '5px 10px',
+                        borderRadius: '5px',
+                        backgroundColor: 'red',
+                        color: 'white',
+                        border: 'none',
+                        cursor: 'pointer'
+                      }} onClick={() => handleDelete(enquiry.id)}>Delete</button>
                     </td>
                   </tr>
                 ))

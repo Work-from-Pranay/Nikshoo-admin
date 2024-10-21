@@ -442,7 +442,14 @@ button:hover:not(:disabled) {
   justify-content: center;
   align-items: center;
   opacity: 0;
+  padding: 1vw;
   transition: opacity 0.3s;
+}
+.edit{
+  background: #23AA9B !important;
+}
+.overlay button{
+  margin: 0.4vw;
 }
 
 .image-card:hover .overlay {
@@ -508,4 +515,26 @@ button:hover:not(:disabled) {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+
+.loading-icon {
+  font-size: 3rem; /* Adjust size as needed */
+  color: #23AA9B; /* Adjust color as needed */
+  animation: spin 1s linear infinite;
+}
+.imgone{
+  color: white;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import AdminPopUp from "../Components/AdminPopUp.jsx"; // Import the popup component
 import { GrUserAdmin } from "react-icons/gr";
+import { FaSpinner } from 'react-icons/fa';
+
 const AdminUser = () => {
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState(''); // State for search term
@@ -157,7 +159,11 @@ const AdminUser = () => {
               ))
             ) : (
               <tr>
-                <td colSpan="4">No users found</td>
+                <td colSpan="4">
+                  <div className="loading-container">
+                    <FaSpinner className="loading-icon" />
+                  </div>
+                </td>
               </tr>
             )}
           </tbody>

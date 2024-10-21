@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { FaSpinner } from 'react-icons/fa';
+
 
 const AdminContactTwo = () => {
   const [contacts, setContacts] = useState([]);
   const [uid] = useState('EyrEUxvYnVZueLMjvX3LOX7RHVb2'); // Assuming uid is constant
-  const [searchTerm, setSearchTerm] = useState(''); 
-  const [filteredContacts, setFilteredContacts] = useState([]); 
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredContacts, setFilteredContacts] = useState([]);
   const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
@@ -16,7 +18,7 @@ const AdminContactTwo = () => {
           id,
           ...contact
         }));
-        
+
         setContacts(contactsArray);
         setFilteredContacts(contactsArray);
       } catch (error) {
@@ -100,12 +102,12 @@ const AdminContactTwo = () => {
         <h1 className='h1-con'>Contact Page</h1>
 
         {/* Search Bar */}
-        <input 
-          type="text" 
+        <input
+          type="text"
           className='search'
-          placeholder="Search contacts..." 
-          value={searchTerm} 
-          onChange={(e) => setSearchTerm(e.target.value)} 
+          placeholder="Search contacts..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
           style={{
             padding: '10px',
             width: '100%',
@@ -116,8 +118,8 @@ const AdminContactTwo = () => {
         />
 
         {/* Button to download CSV */}
-        <button 
-          onClick={downloadCSV} 
+        <button
+          onClick={downloadCSV}
           style={{
             padding: '10px',
             marginBottom: '20px',
@@ -147,7 +149,11 @@ const AdminContactTwo = () => {
             <tbody>
               {loading ? (
                 <tr>
-                  <td colSpan="7">Loading...</td>
+                  <td colSpan="7">
+                    <div className="loading-container">
+                      <FaSpinner className="loading-icon" />
+                    </div>
+                  </td>
                 </tr>
               ) : filteredContacts.length > 0 ? (
                 filteredContacts.map((contact, index) => (
@@ -159,8 +165,8 @@ const AdminContactTwo = () => {
                     <td>{contact.message}</td>
                     <td>{new Date(contact.createdAt).toLocaleDateString()}</td>
                     <td>
-                      <button 
-                        onClick={() => handleDelete(contact.id)} 
+                      <button
+                        onClick={() => handleDelete(contact.id)}
                         style={{
                           padding: '5px 10px',
                           borderRadius: '5px',

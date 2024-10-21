@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { FaSpinner } from 'react-icons/fa';
+
 
 const AdminPartner = () => {
     const [partners, setPartners] = useState([]);
@@ -152,7 +154,11 @@ const AdminPartner = () => {
                         <tbody>
                             {loading ? (
                                 <tr>
-                                    <td colSpan="8">Loading...</td>
+                                    <td colSpan="8">
+                                        <div className="loading-container">
+                                            <FaSpinner className="loading-icon" />
+                                        </div>
+                                    </td>
                                 </tr>
                             ) : filteredPartners.length > 0 ? (
                                 filteredPartners.map((partner, index) => (
