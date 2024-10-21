@@ -33,7 +33,7 @@ body {
   background: transparent !important;
 }
 h1{
-  color: white;
+  color: #2f3a38;
 }
 
 /* Sidebar Navigation */
@@ -81,10 +81,12 @@ nav ul li a:hover {
 }
 
 .logout {
-  background: rgb(250, 0, 0);
+  background: #eb2d39;
   border: none;
-  border-radius: 10px;
+  width: 90%;
+  border-radius: 5px;
   margin-left: 0.5vw;
+  margin-top: 15vw;
 }
 
 .logout:hover {
@@ -97,7 +99,7 @@ nav ul li a:hover {
   margin-left: 220px;
   padding: 20px;
   width: 84%;
-  background-color: #a8d1cd;
+  background-color: #f3f3f3f3;
   min-height: 95vh;
 }
 
@@ -107,7 +109,7 @@ a {
 }
 
 .content {
-  background-color: #2dbaa9;
+  background-color: white;
   flex-grow: 1;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -401,6 +403,7 @@ button:hover:not(:disabled) {
   background-color: #10665c;
   border-radius: 5px;
   cursor: pointer;
+  color: white;
 }
 
 .file-upload-input {
