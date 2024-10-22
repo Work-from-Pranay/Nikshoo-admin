@@ -31,6 +31,7 @@ const AdminLayout = () => {
               <li onClick={toggleMenu}><NavLink to="/admin/contact2">Form2 (Contact)</NavLink></li>
               <li onClick={toggleMenu}><NavLink to="/admin/partner">Form3 (Partner)</NavLink></li>
               <li onClick={toggleMenu}><NavLink to="/admin/images">Images</NavLink></li>
+              <li onClick={toggleMenu}><NavLink to="/admin/data">Data</NavLink></li>
             </ul>
             <button onClick={handleLogout} className="logout">Logout</button>
           </nav>
