@@ -86,7 +86,7 @@ nav ul li a:hover {
   width: 90%;
   border-radius: 5px;
   margin-left: 0.5vw;
-  margin-top: 15vw;
+  margin-top: 10vw;
 }
 
 .logout:hover {
@@ -432,33 +432,6 @@ button:hover:not(:disabled) {
   color: white;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #0d665cf1;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  padding: 1vw;
-  transition: opacity 0.3s;
-}
-.edit{
-  background: #23AA9B !important;
-}
-.overlay button{
-  margin: 0.4vw;
-}
-
-.image-card:hover .overlay {
-  opacity: 1;
-}
-
 .popup-form {
   position: fixed;
   top: 0;
@@ -624,3 +597,136 @@ label {
   }
 }
 
+
+.custom-grid {
+  display: flex;
+  gap: 10px;
+  padding: 0px 70px;
+  width: 65vw;
+  height: 65vh;
+  margin-bottom: 4vh;
+}
+
+/* Left Section - Takes full height */
+.left-section {
+  width: 40%;
+}
+
+.left-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Right Section - Split vertically */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 10px;
+}
+
+/* Top Half and Bottom Half in the right section */
+.top-half,
+.bottom-half {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  height: 50%;
+}
+
+.gallery-image-container {
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* In the top half, first image has less width and second has more */
+.top-half .gallery-image-container:first-child {
+  flex: 1.5; /* Less width */
+}
+.top-half .gallery-image-container:last-child {
+  flex: 2; /* More width */
+}
+
+/* In the bottom half, first image has more width and second has less */
+.bottom-half .gallery-image-container:first-child {
+  flex: 2; /* More width */
+}
+.bottom-half .gallery-image-container:last-child {
+  flex: 1.5; /* Less width */
+}
+
+.gallery-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 500px) {
+  .custom-grid {
+      flex-direction: column;
+      padding: 0px 20px;
+  }
+
+  .left-section, .right-section {
+      width: 100%;
+  }
+
+  .top-half, .bottom-half {
+      flex-direction: column;
+  }
+
+  .top-half .gallery-image-container, .bottom-half .gallery-image-container {
+      width: 100%;
+  }
+}
+
+
+.gallery-image-container {
+  position: relative;
+}
+
+.gallery-image-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Transition for smooth appearance */
+}
+
+.gallery-image-container:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.overlay span {
+  color: white; /* Text color for image name */
+  margin-bottom: 10px; /* Space between name and button */
+}
+
+.overlay button {
+  margin: 5px; /* Space between buttons */
+}
+
+
+.spinner{
+  margin-left: 1vw;
+  animation: spin 1s linear infinite;
+  
+}
+
+.span-grid{
+  color: red;
+}

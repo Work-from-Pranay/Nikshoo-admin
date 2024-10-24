@@ -32,7 +32,7 @@ const Home = () => {
       } else {
         // Successful login
         localStorage.setItem('authToken', result.userId);
-        navigate('/admin'); // Redirect to admin page
+        navigate('/admin/users'); // Redirect to admin page
       }
 
     } catch (error) {

@@ -22,6 +22,7 @@ const AdminLayout = () => {
         <button className="hamburger" onClick={toggleMenu}>
           &#9776; {/* Hamburger icon */}
         </button>
+        
         <div className={`container ${isMenuOpen ? 'menu-open' : ''}`}>
           {/* Sidebar */}
           <nav className={isMenuOpen ? 'open' : ''}>
